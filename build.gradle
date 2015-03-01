@@ -1,9 +1,11 @@
 
 buildscript {
-    repositories { jcenter() }
+    repositories {
+        jcenter()
+    }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE"
-        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+        classpath 'org.springframework:springloaded:1.2.1.RELEASE'
     }
 }
 
@@ -21,6 +23,9 @@ idea {
 repositories {
     mavenCentral()
     maven { url "http://repo.spring.io/libs-snapshot" }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
 }
 
 sourceCompatibility = 1.8
@@ -28,15 +33,9 @@ targetCompatibility = 1.8
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
-    //    compile 'org.vaadin.spring:spring-boot-vaadin:0.0.2-SNAPSHOT'
-    compile files(
-        'libs/spring-boot-vaadin-0.0.2-SNAPSHOT.jar',
-        'libs/spring-vaadin-0.0.2-SNAPSHOT.jar',
-//        'libs/spring-security-vaadin-0.0.2-20140311.122150-2.jar',
-//        'libs/spring-vaadin-security-0.0.2-SNAPSHOT.jar',
-        'libs/spring-vaadin-stuff-0.0.2-SNAPSHOT.jar'
-//        'libs/spring-vaadin-touchkit-0.0.2-SNAPSHOT.jar'
-        )
+    compile 'org.vaadin.spring:spring-boot-vaadin:0.0.5-SNAPSHOT'
+    compile 'org.vaadin.spring:spring-vaadin:0.0.5-SNAPSHOT'
+    compile 'org.vaadin.spring:spring-vaadin-stuff:0.0.4-SNAPSHOT'
     compile 'com.vaadin:vaadin-themes:7.4.0'
     compile 'com.vaadin:vaadin-client-compiled:7.4.0'
     compile 'com.vaadin:vaadin-server:7.4.0'
